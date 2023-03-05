@@ -1,102 +1,103 @@
 ﻿/*
  * 
  * 
- *      Atividade utilizando classes e conceitos estudados durante as aulas para criação de registros
+ *      Activity using the class concept: user register
  * 
  * 
  */
 
 
-List<Usuario> info = new List<Usuario>();
+List<Users> info = new List<Users>();
 
-string opcIn = "S";
+string optBeg = "Y";
 
 
-Console.WriteLine("\n------------------\n|    Registro    |\n------------------\n");
+Console.WriteLine("\n----------------------\n|    User Register   |\n----------------------\n");
 
-// Loop while para o usuário registrar mais de um registro caso ele queira.
-while (opcIn == "S")
+// While loop to register more than one user
+while (optBeg == "Y")
 {
 
-// Pedindo ao usuário para que este preencha as informações.
+// Asking the user to type the info
     _reg:
-    Usuario obj = new Usuario();
-    Console.Write("\nPreencha as informações abaixo para completar o registro.\n");
-    Console.Write("Nome: ");
-    obj.nome = Console.ReadLine();
+    Users obj = new Users();
+    Console.Write("\nPlease, enter with the info below.\n");
+    Console.Write("Name: ");
+    obj.name = Console.ReadLine();
 
-    Console.Write("Sobrenome: ");
-    obj.sobrenome = Console.ReadLine();
+    Console.Write("Last Name: ");
+    obj.lastname = Console.ReadLine();
 
-    _idade:
-    Console.Write("Idade: ");
+    _age:
+    Console.Write("Age: ");
 
-    int id;
-    if (int.TryParse(Console.ReadLine(), out id))
-        obj.idade = id;
+    int ag;
+    if (int.TryParse(Console.ReadLine(), out ag))
+        obj.age = ag;
     else
     {
-        Console.WriteLine("\nValor inválido! Tente novamente!\n");
-        goto _idade;
+        Console.WriteLine("\nIncorrect value! Please, try filling it again.\n");
+        goto _age;
     }
 
-    _senha:
-    Console.Write("Senha (6 dígitos): ");
-    obj.senha = Console.ReadLine();
+    _pass:
+    Console.Write("Password (6 digits): ");
+    obj.password = Console.ReadLine();
 
-    if (obj.senha.Length != 6)
+    if (obj.password.Length != 6)
     {
-        Console.WriteLine("\nA senha não possui 6 dígitos! Tente novamente!\n");
-        goto _senha;
+        Console.WriteLine("\nThe password you typed does not have 6 digits! Please, try filling it again.\n");
+        goto _pass;
     }
 
 
 
 
-    // Caso tudo esteja certo, armazena as informações dentro da lista.
+    // If everything is alright, add the complete object (name, last name, age, password) to the list called info.
     info.Add(obj);
-    Console.WriteLine("\nUsuário cadastrado com sucesso!\n");
+    Console.WriteLine("\nUser registered successfully!\n");
 
 
-// Confere se o usuário deseja adicionar um novo registro. Caso sim, ele é mandado para o início onde deverá preencher novas informações.
+    // Asks the user if he wants to create a new register. If so, he goes to the beggining, creating a new user type object.
     _addReg:
-    Console.WriteLine("\nDeseja adicionar um novo registro?\n[S] Sim\n[N] Não\n");
+    Console.WriteLine("\nDo you want to register another user?\n[Y] Yes\n[N] No\n");
     string opc = Console.ReadLine().ToUpper();
 
-    if (opc != "S" && opc != "N")
+    if (opc != "Y" && opc != "N")
     {
-        Console.WriteLine("\nERRO 004: Opção escolhida é inválida! Tente novamente!");
+        Console.WriteLine("\nERROR: You have selected an incorrect option! Please, try it again.\n");
         goto _addReg;
     }
 
-    else if (opc == "S")
+    else if (opc == "Y")
         goto _reg;
 
     else
     {
-        opcIn = "N";
-        // Calcula o total de registros.
-        int totalReg = info.Count();
+        optBeg = "N";
 
-        Console.WriteLine($"\nA coleção possui um total de {totalReg} registros.\n");
+        // Calculates the total of registers.
+        int regTotal = info.Count();
+
+        Console.WriteLine($"\nThe collection has a total of {regTotal} registers.\n");
 
 
-    // Exibe ou não os dados para o usuário.
-    _listarReg:
-        Console.WriteLine("\nDeseja listar os registros?\n[S] Sim \n[N] Não");
-        string opcListar = Console.ReadLine().ToUpper();
+        // Asks the user if he wants the program to display the info from each register.
+        _regList:
+        Console.WriteLine("\nDo you want to display the info?\n[Y] Yes \n[N] No");
+        string listOpt = Console.ReadLine().ToUpper();
 
-        if (opcListar != "S" && opcListar != "N")
+        if (listOpt != "Y" && listOpt != "N")
         {
-            Console.WriteLine("\nERRO 004: Opção escolhida é inválida! Tente novamente!");
-            goto _listarReg;
+            Console.WriteLine("\nERROR: You have selected an incorrect option! Please, try it again.");
+            goto _regList;
         }
 
-        else if (opcListar == "S")
+        else if (listOpt == "Y")
         {
             foreach (var item in info)
             {
-                Console.WriteLine(item.ExibirDados());
+                Console.WriteLine(item.ShowInfo());
             }
         }
 
@@ -105,7 +106,7 @@ while (opcIn == "S")
 
 }
 
-Console.WriteLine("\nTecle espaço para encerrar...");
+Console.WriteLine("\nPress space to end...");
 Console.ReadKey();
 
 
