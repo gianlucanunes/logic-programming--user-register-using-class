@@ -9,7 +9,9 @@ I've utilized:
 - List
 - Methods
 - Validation
+
 <br><br>
+
 Olá! Esse é um exercício de lógica de programação em que eu utilizei o conceito de classe para criar um sistema de registro de usuário básico e funcional.
 Eu utilizei:
 - Classes
