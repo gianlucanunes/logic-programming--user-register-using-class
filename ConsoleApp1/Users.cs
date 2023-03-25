@@ -1,7 +1,6 @@
 ﻿// Creating the public class Users
 public class Users
 {
-
     // Creating the class properties.
     public string name { get; set; }
     public string lastname { get; set; }
@@ -13,5 +12,4 @@ public class Users
     {
         return $"Name: {name} {lastname} - Age: {age} years old - Password: {password}";
     }
-
 }

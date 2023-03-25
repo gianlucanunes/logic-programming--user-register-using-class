@@ -19,7 +19,6 @@ Console.WriteLine("\n----------------------\n|    User Register   |\n-----------
 // While loop to register more than one user
 while (optBeg == "Y")
 {
-
 // Asking the user to type the info
 _reg:
     // Creating the Users object to store the info
@@ -107,10 +106,8 @@ _addReg:
                 Console.WriteLine(item.ShowInfo());
             }
         }
-
         break;
     }
-
 }
 
 // Ending the program
