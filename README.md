@@ -5,7 +5,7 @@
 
 Hi! This is a logic programming exercise where I've used the class concept to create a basic and functional user register system.
 I've utilized:
-- Class
+- Classes
 - List
 - Methods
 - Validation
