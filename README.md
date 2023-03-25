@@ -1,7 +1,7 @@
-#      EN: Logic Programming Exercise: registering a user using the class concept.
-#      PT-BR: Exercício de Lógica de Programação: registrando usuário usando o conceito de classe.
-#      
-#      Created by / Feito por: Gianluca Nunes
+##      EN: Logic Programming Exercise: registering a user using the class concept.
+##      PT-BR: Exercício de Lógica de Programação: registrando usuário usando o conceito de classe.
+##      
+##      Created by / Feito por: Gianluca Nunes
 
 Hi! This is a logic programming exercise where I've used the class concept to create a basic and functional user register system.
 I've utilized:
