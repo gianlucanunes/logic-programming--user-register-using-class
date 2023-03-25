@@ -113,10 +113,3 @@ _addReg:
 // Ending the program
 Console.WriteLine("\nPress space to end...");
 Console.ReadKey();
-
-
-
-
-
-
-
